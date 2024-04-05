@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile - bduber274</title>
+  <meta property="og:title" content="Profile - bduber274" />
+  <meta property="og:description" content="Cool Website Trust" />
+  <meta property="og:image" content="profile.png" />
+  <style>
+    /* LOADING SCREEN STYLES */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212; 
+      color: #fff; 
+    }
+
+    #entryButton {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #212121; 
+      padding: 20px 40px;
+      border: 2px solid #3498db;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #entryButton a {
+      text-decoration: none;
+      color: #fff; 
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    #content {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    #content.show {
+      opacity: 1;
+    }
+
+    /* PROFILE STYLES */
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif; 
+        background-color: #0d0d0d;
+        color: #fff;
+        line-height: 1.6;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 50px auto; 
+        padding: 20px;
+    }
+
+    .profile {
+        background-color: #1f1f1f;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.8);
+    }
+
+    .profile-pic {
+        width: 200px; 
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        display: block;
+        border: 5px solid #fff; 
+        object-fit: cover;
+    }
+
+    .name {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 36px; 
+        font-weight: bold; 
+    }
+
+    .bio {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 20px;
+        opacity: 0.8; 
+    }
+
+    .contact-info {
+        list-style: none;
+        padding: 0;
+        text-align: center;
+        margin-top: 20px; 
+    }
+
+    .contact-info a {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4ecca3; 
+        padding: 12px 24px; 
+        margin: 8px; 
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+        font-size: 18px;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact-info a:hover {
+        background-color: #47b8a7;
+    }
+
+    /* PROJECTS STYLES */
+
+    .projects {
+        display: flex;
+        justify-content: center; 
+        margin-top: 40px;
+    }
+
+    .project-card {
+        background-color: #1f1f1f;
+        border-radius: 15px;
+        padding: 20px;
+        width: calc(33.33% - 20px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        margin: 0 10px;
+        text-align: center; 
+    }
+
+    .project-card a {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        background-color: #4ecca3; 
+        padding: 12px 24px; 
+        margin: 8px; 
+        border-radius: 25px;
+        transition: background-color 0.3s ease;
+        font-size: 18px;
+        border: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-card a:hover {
+        background-color: #47b8a7;
+    }
+
+    .project-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #4ecca3;
+    }
+
+    .project-description {
+        font-size: 16px;
+        opacity: 0.8;
+    }
+
+    /* VIEW COUNTER STYLE */
+    .view-counter {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+  <div id="entryButton">
+    <a href="#">Click To Enter</a>
+  </div>
+
+  <audio id="profileAudio" src="/music.mp3"></audio>
+  <div class="container" id="content">
+    <div class="profile">
+      <img src="profile.png"
+        alt="Profile Picture" class="profile-pic" />
+      <h1 class="name">bduber274</h1>
+      <p class="bio">14 years old, programmer, graphic designer, web designer, modeler, developer. i make bypasses and am good with html css and javascript. see some of my work below</p>
+      <ul class="contact-info">
+        <a href="https://discord.com/invite/R5zcwHjDWs" target="_blank">Discord</a>
+        <a href="https://www.roblox.com/users/956796640/profile" target="_blank">Roblox</a>
+        <a href="https://github.com/bduber274" target="_blank">Github</a>
+        <a href="https://youtube.com/bduber274" target="_blank">YouTube</a>
+        <a href="https://tiktok.com/@not_bduber274" target="_blank">TikTok</a>
+      </ul>
+
+      <div class="projects">
+        <div class="project-card">
+          <h2 class="project-title">Celestial Network</h2>
+          <p class="project-description">A unblocked game website for school. Includes a proxy, and 2 Versions of the game website. Click view and on your keyboard click 2 to open the game site.</p>
+          <a href="https://celestial-network.fr.to" target="_blank" class="contact-info">View</a>
+      </div>
+
+      <div class="project-card">
+        <h2 class="project-title">AntiSecurly.JS</h2>
+        <p class="project-description">A bookmarklet created to bypass Securly being able to view your screen and blocking websites. Click view, drag the button into your bookmarks bar, then select the bookmarklet on any website.</p>
+        <a href="https://anti-securly.js.uk.to" target="_blank" class="contact-info">View</a>
+    </div>
+
+    </div>
+      <div class="view-counter" id="viewCounter">Views: 0</div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        var entryButton = document.getElementById("entryButton");
+        var content = document.getElementById("content");
+        var audio = document.getElementById("profileAudio");
+
+        entryButton.style.opacity = 1;
+        entryButton.style.visibility = "visible";
+
+        document.addEventListener("click", function () {
+          entryButton.style.display = "none";
+          content.classList.add("show");
+          audio.play();
+        });
+      }, 500);
+    });
+  </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var entryButton = document.getElementById("entryButton");
+        var content = document.getElementById("content");
+        var audio = document.getElementById("profileAudio");
+
+        setTimeout(function () {
+          entryButton.style.opacity = 1;
+          entryButton.style.visibility = "visible";
+        }, 500);
+
+        document.addEventListener("click", function () {
+          entryButton.style.display = "none";
+          content.classList.add("show");
+          audio.play();
+        });
+
+        var viewCount = getViewCount();
+        document.getElementById("viewCounter").textContent = "Views: " + numberWithCommas(viewCount);
+        setViewCount(viewCount + 1);
+      });
+
+      function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+      }
+
+      function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1, c.length);
+          }
+          if (c.indexOf(nameEQ) == 0) {
+            return c.substring(nameEQ.length, c.length);
+          }
+        }
+        return null;
+      }
+
+      function getViewCount() {
+        var viewCount = localStorage.getItem("profileViewCount");
+        if (!viewCount) {
+          viewCount = getCookie("profileViewCount") || 0;
+        }
+        return parseInt(viewCount);
+      }
+
+      function setViewCount(count) {
+        localStorage.setItem("profileViewCount", count);
+        setCookie("profileViewCount", count, 365);
+      }
+
+      function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+    </script>
+</body>
+</html>
