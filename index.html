@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -126,6 +125,17 @@
         background-color: #47b8a7;
     }
 
+    /* STATUS */
+    .status-info {
+        text-align: center;
+        margin-top: 20px; 
+    }
+
+    .status-info p {
+        color: #fff;
+        font-size: 18px;
+    }
+
     /* PROJECTS STYLES */
 
     .projects {
@@ -206,28 +216,32 @@
         <a href="https://github.com/bduber274" target="_blank">Github</a>
         <a href="https://youtube.com/bduber274" target="_blank">YouTube</a>
         <a href="https://tiktok.com/@not_bduber274" target="_blank">TikTok</a>
-      </ul>
+        </ul>
 
-      <div class="projects">
+        <div class="status-info">
+        <p>Status: Offline</p>
+        </div>
+
+        <div class="projects">
         <div class="project-card">
           <h2 class="project-title">Celestial Network</h2>
           <p class="project-description">A unblocked game website for school. Includes a proxy, and 2 Versions of the game website. Click view and on your keyboard click 2 to open the game site.</p>
           <a href="https://celestial-network.fr.to" target="_blank" class="contact-info">View</a>
-      </div>
+        </div>
 
-      <div class="project-card">
-        <h2 class="project-title">AntiSecurly.JS</h2>
-        <p class="project-description">A bookmarklet created to bypass Securly being able to view your screen and blocking websites. Click view, drag the button into your bookmarks bar, then select the bookmarklet on any website.</p>
-        <a href="https://anti-securly.js.uk.to" target="_blank" class="contact-info">View</a>
-    </div>
+        <div class="project-card">
+          <h2 class="project-title">AntiSecurly.JS</h2>
+          <p class="project-description">A bookmarklet created to bypass Securly being able to view your screen and blocking websites. Click view, drag the button into your bookmarks bar, then select the bookmarklet on any website.</p>
+          <a href="https://anti-securly.js.uk.to" target="_blank" class="contact-info">View</a>
+        </div>
+        </div>
+        <div class="view-counter" id="viewCounter">Views: 0</div>
+        </div>
+        </div>
 
-    </div>
-      <div class="view-counter" id="viewCounter">Views: 0</div>
-  </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      setTimeout(function () {
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
         var entryButton = document.getElementById("entryButton");
         var content = document.getElementById("content");
         var audio = document.getElementById("profileAudio");
@@ -240,73 +254,73 @@
           content.classList.add("show");
           audio.play();
         });
-      }, 500);
-    });
-  </script>
+        }, 500);
+        });
+        </script>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
         var entryButton = document.getElementById("entryButton");
         var content = document.getElementById("content");
         var audio = document.getElementById("profileAudio");
 
         setTimeout(function () {
-          entryButton.style.opacity = 1;
-          entryButton.style.visibility = "visible";
+        entryButton.style.opacity = 1;
+        entryButton.style.visibility = "visible";
         }, 500);
 
         document.addEventListener("click", function () {
-          entryButton.style.display = "none";
-          content.classList.add("show");
-          audio.play();
+        entryButton.style.display = "none";
+        content.classList.add("show");
+        audio.play();
         });
 
         var viewCount = getViewCount();
         document.getElementById("viewCounter").textContent = "Views: " + numberWithCommas(viewCount);
         setViewCount(viewCount + 1);
-      });
+        });
 
-      function setCookie(name, value, days) {
+        function setCookie(name, value, days) {
         var expires = "";
         if (days) {
-          var date = new Date();
-          date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-          expires = "; expires=" + date.toUTCString();
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
         }
         document.cookie = name + "=" + (value || "") + expires + "; path=/";
-      }
+        }
 
-      function getCookie(name) {
+        function getCookie(name) {
         var nameEQ = name + "=";
         var ca = document.cookie.split(';');
         for (var i = 0; i < ca.length; i++) {
-          var c = ca[i];
-          while (c.charAt(0) == ' ') {
-            c = c.substring(1, c.length);
-          }
-          if (c.indexOf(nameEQ) == 0) {
-            return c.substring(nameEQ.length, c.length);
-          }
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1, c.length);
+        }
+        if (c.indexOf(nameEQ) == 0) {
+          return c.substring(nameEQ.length, c.length);
+        }
         }
         return null;
-      }
+        }
 
-      function getViewCount() {
+        function getViewCount() {
         var viewCount = localStorage.getItem("profileViewCount");
         if (!viewCount) {
-          viewCount = getCookie("profileViewCount") || 0;
+        viewCount = getCookie("profileViewCount") || 0;
         }
         return parseInt(viewCount);
-      }
+        }
 
-      function setViewCount(count) {
+        function setViewCount(count) {
         localStorage.setItem("profileViewCount", count);
         setCookie("profileViewCount", count, 365);
-      }
+        }
 
-      function numberWithCommas(x) {
+        function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      }
-    </script>
-</body>
-</html>
+        }
+        </script>
+        </body>
+        </html>
