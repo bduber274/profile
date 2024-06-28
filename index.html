@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Profile - bduber274</title>
   <meta property="og:title" content="Profile - bduber274" />
-  <meta property="og:description" content="Cool Website Trust" />
-  <meta property="og:image" content="profile.png" />
+  <meta property="og:description" content="My Profile" />
+  <meta property="og:image" content="/profile.png" />
   <style>
     /* LOADING SCREEN STYLES */
     body {
@@ -206,7 +206,7 @@
   <audio id="profileAudio" src="/music.mp3"></audio>
   <div class="container" id="content">
     <div class="profile">
-      <img src="profile.png"
+      <img src="/profile.png"
         alt="Profile Picture" class="profile-pic" />
       <h1 class="name">bduber274</h1>
       <p class="bio">14 years old, programmer, graphic designer, web designer, modeler, developer. i make bypasses and am good with html css and javascript. see some of my work below</p>
@@ -216,13 +216,13 @@
         <a href="https://github.com/bduber274" target="_blank">Github</a>
         <a href="https://youtube.com/bduber274" target="_blank">YouTube</a>
         <a href="https://tiktok.com/@not_bduber274" target="_blank">TikTok</a>
-        </ul>
+      </ul>
 
-        <div class="status-info">
-        <p>Status: Offline</p>
-        </div>
+      <div class="status-info">
+        <p>Status: <span id="discord-status">Fetching...</span></p>
+      </div>
 
-        <div class="projects">
+      <div class="projects">
         <div class="project-card">
           <h2 class="project-title">Nova Network</h2>
           <p class="project-description">A unblocked game website for school. Includes a proxy, games, and apps for your unblocking needs. To get activation codes join my Discord and verify to gain access to codes.</p>
@@ -234,14 +234,15 @@
           <p class="project-description">A bookmarklet created to bypass Securly being able to view your screen and blocking websites. Click view, drag the button into your bookmarks bar, then select the bookmarklet on any website.</p>
           <a href="https://anti-securly.js.uk.to" target="_blank" class="contact-info">View</a>
         </div>
-        </div>
-        <div class="view-counter" id="viewCounter">Views: 0</div>
-        </div>
-        </div>
+      </div>
 
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        setTimeout(function () {
+      <div class="view-counter" id="viewCounter">Views: 0</div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
         var entryButton = document.getElementById("entryButton");
         var content = document.getElementById("content");
         var audio = document.getElementById("profileAudio");
@@ -254,46 +255,55 @@
           content.classList.add("show");
           audio.play();
         });
-        }, 500);
+      }, 500);
+
+      var viewCount = getViewCount();
+      document.getElementById("viewCounter").textContent = "Views: " + numberWithCommas(viewCount);
+      setViewCount(viewCount + 1);
+
+      // Fetch Discord status from Lanyard API
+      const discordUserId = '1018262832472674404';
+      fetch(`https://api.lanyard.rest/v1/users/${discordUserId}`)
+        .then(response => response.json())
+        .then(data => {
+          const statusElement = document.getElementById('discord-status');
+          if (data.success) {
+            const discordStatus = data.data.discord_status;
+            let statusText = 'Offline';
+            if (discordStatus === 'online') {
+              statusText = 'Online';
+            } else if (discordStatus === 'dnd') {
+              statusText = 'Online';
+            } else if (discordStatus === 'idle') {
+              statusText = 'Online';
+            } else if (discordStatus === 'offline') {
+              statusText = 'Offline';
+            }
+            statusElement.textContent = statusText;
+          } else {
+            statusElement.textContent = 'Error fetching status';
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching Discord status:', error);
+          document.getElementById('discord-status').textContent = 'Error fetching status';
         });
-        </script>
+    });
 
-        <script>
-        document.addEventListener("DOMContentLoaded", function () {
-        var entryButton = document.getElementById("entryButton");
-        var content = document.getElementById("content");
-        var audio = document.getElementById("profileAudio");
-
-        setTimeout(function () {
-        entryButton.style.opacity = 1;
-        entryButton.style.visibility = "visible";
-        }, 500);
-
-        document.addEventListener("click", function () {
-        entryButton.style.display = "none";
-        content.classList.add("show");
-        audio.play();
-        });
-
-        var viewCount = getViewCount();
-        document.getElementById("viewCounter").textContent = "Views: " + numberWithCommas(viewCount);
-        setViewCount(viewCount + 1);
-        });
-
-        function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
+    function setCookie(name, value, days) {
+      var expires = "";
+      if (days) {
         var date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
-        }
+      }
+      document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
 
-        function getCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for (var i = 0; i < ca.length; i++) {
+    function getCookie(name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
           c = c.substring(1, c.length);
@@ -301,26 +311,26 @@
         if (c.indexOf(nameEQ) == 0) {
           return c.substring(nameEQ.length, c.length);
         }
-        }
-        return null;
-        }
+      }
+      return null;
+    }
 
-        function getViewCount() {
-        var viewCount = localStorage.getItem("profileViewCount");
-        if (!viewCount) {
+    function getViewCount() {
+      var viewCount = localStorage.getItem("profileViewCount");
+      if (!viewCount) {
         viewCount = getCookie("profileViewCount") || 0;
-        }
-        return parseInt(viewCount);
-        }
+      }
+      return parseInt(viewCount);
+    }
 
-        function setViewCount(count) {
-        localStorage.setItem("profileViewCount", count);
-        setCookie("profileViewCount", count, 365);
-        }
+    function setViewCount(count) {
+      localStorage.setItem("profileViewCount", count);
+      setCookie("profileViewCount", count, 365);
+    }
 
-        function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
-        </script>
-        </body>
-        </html>
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+  </script>
+</body>
+</html>
