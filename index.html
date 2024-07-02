@@ -211,6 +211,38 @@
     .date {
         font-size: 20px;
     }
+
+    /* FRIENDS PROFILES STYLES */
+    .friends {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    .friend {
+        text-align: center;
+        margin: 0 10px;
+    }
+
+    .friend img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        object-fit: cover;
+        margin-bottom: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .friend img:hover {
+        transform: scale(1.1);
+    }
+
+    .friend a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 14px;
+    }
   </style>
 </head>
 <body>
@@ -225,8 +257,7 @@
         <div class="time" id="time"></div>
         <div class="date" id="date"></div>
       </div>
-      <img src="/profile.png"
-        alt="Profile Picture" class="profile-pic" />
+      <img src="/profile.png" alt="Profile Picture" class="profile-pic" />
       <h1 class="name">bduber274</h1>
       <p class="bio">14 year old programmer, graphic designer, web designer, modeler, developer. I work with html, css, javascript, python, c++, C#, lua, and node.js. I bypass anticheats, blockers, etc. Some projects listed below</p>
       <ul class="contact-info">
@@ -252,6 +283,27 @@
           <h2 class="project-title">AntiSecurly.JS</h2>
           <p class="project-description">A bookmarklet created to bypass Securly being able to view your screen and blocking websites. Click view, drag the button into your bookmarks bar, then select the bookmarklet on any website.</p>
           <a href="https://anti-securly.js.uk.to" target="_blank" class="contact-info">View</a>
+        </div>
+      </div>
+
+      <div class="friends">
+        <div class="friend">
+          <a href="https://github.com/plexilenetwork" target="_blank">
+            <img src="https://cdn.discordapp.com/avatars/1074379816033337355/bec1a26fb60d77ffa3a1132914a85665.webp?size=1024&format=webp&width=0&height=256" alt="Willo">
+            <div>Willo</div>
+          </a>
+        </div>
+        <div class="friend">
+          <a href="https://github.com/galacticnetwork" target="_blank">
+            <img src="https://avatars.githubusercontent.com/u/114846211?v=4" alt="Galactic Network">
+            <div>Galactic Network</div>
+          </a>
+        </div>
+        <div class="friend">
+          <a href="https://github.com/nobodycares-lo" target="_blank">
+            <img src="https://cdn.discordapp.com/avatars/973694625409818696/b98c38c2a0bc8f35c77e09298f6a0431.webp?size=1024&format=webp&width=0&height=256" alt="Nobodycares">
+            <div>Nobodycares</div>
+          </a>
         </div>
       </div>
 
